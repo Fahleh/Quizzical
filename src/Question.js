@@ -7,7 +7,7 @@ export default function Question(props) {
     
     const answerElements = props.answers.map(opt => {
         
-        // Highlight selected option
+        // Highlight selected options
         let styles;
         if(!props.mode) {
             styles = {
