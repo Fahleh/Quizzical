@@ -114,7 +114,7 @@ export default function App() {
         })
     }
  
-    // Confetti Logic
+    // Confetti display Logic
     let perfect = false;
    if(showAnswers) {
         if(score == formData.number) {  
