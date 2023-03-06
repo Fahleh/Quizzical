@@ -12,7 +12,7 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    align-items:  center;
+    align-items: center;
     height: 100%;
     position: relative;
 }
@@ -39,6 +39,7 @@ main {
     main {
         width: 100%;
     }
+
     .container {
         width: 100%;
     }
@@ -87,7 +88,10 @@ main {
 }
 
 
-.btn:hover, .power-btn:hover, .mode-btn:hover, .home-btn:hover{
+.btn:hover,
+.power-btn:hover,
+.mode-btn:hover,
+.home-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -114,10 +118,10 @@ main {
 
 
 
-.options{
+.options {
     padding: 3px 7px;
     margin: 2px 2px;
-    
+
 }
 
 .btn-container {
@@ -160,12 +164,14 @@ main {
     z-index: -1;
 }
 
-input[type="radio"], select {
+input[type="radio"],
+select {
     margin: 0.7rem 0.5rem;
     cursor: pointer;
 }
 
-#category, #number {
+#category,
+#number {
     width: 50px;
     margin-right: 1rem;
 }
@@ -191,12 +197,13 @@ input[type="radio"], select {
 }
 
 .dark {
-background-color: black;
-color: #F5F7FB;
+    background-color: black;
+    color: #F5F7FB;
 
 }
 
-.options,.dark {
+.options,
+.dark {
     border: 1px solid #F5F7FB;
 }
 
