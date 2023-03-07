@@ -155,8 +155,31 @@ export default function App() {
     }
 
     // Check results
+    let clickCount = 0
     function checkAnswer() {
-        setShowAnswers(true)
+        function alertUser() {
+            alert('You have not answered any question!');
+        }
+
+        const values = quiz.map(prev => {
+            return prev.answers.map(opt => opt.isHeld)
+        })
+
+        const checkOut = values.map(opt => {
+            return opt.every(opt => opt === false)
+        })
+
+        const held = checkOut.every(Boolean)
+
+        if (held === true && clickCount > 0) {
+            setShowAnswers(true)
+        } else if (held === true && clickCount === 0) {
+            alertUser()
+            clickCount++
+        } else {
+            setShowAnswers(true)
+        }
+
     }
 
     // playAgain function
@@ -299,17 +322,18 @@ export default function App() {
         setMode(theme)
         localStorage.setItem("mode", theme)
     }
-    console.log(mode)
 
     // Logic for switching body color during mode change
-    // if(mode) {
-    //     document.body.style.backgroundColor = "black";
-    // } else {
-    //     document.body.style.backgroundColor = "#F5F7FB";
-    // }
+    if (mode) {
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "#F5F7FB";
+    } else {
+        document.body.style.backgroundColor = "#F5F7FB";
+        document.body.style.color = "#293264";
+    }
 
     return (
-        <main className={mode ? "darkmode" : ""}>
+        <main >
             {start ?
                 <Home start={startQuiz} toggle={changeMode} mode={mode} />
                 :

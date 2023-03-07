@@ -138,23 +138,23 @@ main {
     color: #F5F7FB;
 }
 
+.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: auto;
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 80px;
+    text-align: center;
+    color: #42509d;
+}
+
 .yellow {
     position: fixed;
     right: -120px;
     top: -135px;
     z-index: -1;
-}
-
-.placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 700px;
-    width: 600px;
-    font-family: 'Amatic SC', sans-serif;
-    font-size: 80px;
-    text-align: center;
-    color: #42509d;
 }
 
 .blue {
@@ -212,4 +212,35 @@ select {
     color: #F5F7FB;
     font-weight: 100;
     font-size: 14px;
+}
+
+@media screen and (max-width: 468px) {
+    .placeholder {
+        width: 80%;
+        height: auto;
+        font-size: 40px;
+    }
+
+    .custom {
+        width: 75%;
+    }
+
+    .yellow {
+        position: fixed;
+        right: -180px;
+        top: -175px;
+        z-index: -1;
+    }
+
+    .blue {
+        position: fixed;
+        left: -215px;
+        bottom: -168px;
+        z-index: -1;
+    }
+
+    .btn-container span {
+        color: #1338ed;
+        margin: 10px;
+    }
 }
