@@ -142,7 +142,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 600px;
+    width: 80%;
     height: auto;
     font-family: 'Amatic SC', sans-serif;
     font-size: 80px;
@@ -164,9 +164,9 @@ main {
     z-index: -1;
 }
 
-input[type="radio"],
 select {
     margin: 0.7rem 0.5rem;
+    width: 55px;
     cursor: pointer;
 }
 
@@ -214,9 +214,9 @@ select {
     font-size: 14px;
 }
 
-@media screen and (max-width: 468px) {
+@media screen and (max-width: 480px) {
     .placeholder {
-        width: 80%;
+        width: 100%;
         height: auto;
         font-size: 40px;
     }

@@ -114,6 +114,9 @@ export default function App() {
         })
     }
 
+    let percentage = (score / formData.number) * 100;
+
+
     // Confetti display Logic
     let perfect = false;
     if (showAnswers) {
@@ -192,7 +195,7 @@ export default function App() {
     // Logic for rendering the submit/reset buttons
     const buttonElement = showAnswers ?
         <div className="btn-container">
-            <span>You scored {score}/{formData.number} correct answers</span>
+            <span>You scored {score}/{formData.number} correct answers or {percentage}%</span>
             <button className={`main-btn btn ${mode}`} onClick={resetQuiz}>Play Again</button>
         </div>
         :
@@ -229,7 +232,19 @@ export default function App() {
                 <option value="5">5</option>
                 <option value="10">10</option>
             </select>
-            <input
+            <label htmlFor="difficulty">Difficulty</label>
+            <select
+                id="difficulty"
+                name="difficulty"
+                value={formData.difficulty}
+                onChange={handleChange}
+            >
+                <option value="">-Choose-</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            {/* <input
                 type="radio"
                 id="easy"
                 name="difficulty"
@@ -255,7 +270,7 @@ export default function App() {
                 checked={formData.difficulty === "hard"}
                 onChange={handleChange}
             />
-            <label htmlFor="hard">Hard</label>
+            <label htmlFor="hard">Hard</label> */}
             <div >
                 <img src="power-switch.png" alt="icon.png"
                     className={`power-btn ${mode}`}
@@ -347,7 +362,7 @@ export default function App() {
                     {perfect && <Confetti height={window.outerHeight} />}
                     {customDisplay}
                     {questions}
-                    {!show() ? <div className={`placeholder ${mode}`}><h2>Please<br />choose your quiz type</h2></div> : buttonElement}
+                    {!show() ? <div className={`placeholder ${mode}`}><h2>Please<br />choose your quiz<br />type</h2></div> : buttonElement}
                 </>
             }
             <img src="../images/blob-yellow.png" className="yellow" alt="blob.png" />
