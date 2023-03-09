@@ -28,12 +28,13 @@ export default function App() {
     }
 
     const [start, setStart] = React.useState(persist)
-
     const [quiz, setQuiz] = React.useState([])
     const [reset, setReset] = React.useState(true)
     const [showAnswers, setShowAnswers] = React.useState(false)
     const [formData, setFormData] = React.useState(details)
     const [mode, setMode] = useState(theme)
+    const [confirm, setConfirm] = useState(false)
+
 
     localStorage.setItem("data", JSON.stringify(formData))
 
@@ -82,6 +83,8 @@ export default function App() {
                 })
             }))
     }, [reset, formData.number, formData.difficulty, formData.category])
+
+
 
     // Function to mix correct/incorrect functions
     function shuffle(array) {
@@ -157,12 +160,26 @@ export default function App() {
         localStorage.setItem("Restart", start)
     }
 
-    // Check results
-    let clickCount = 0
-    function checkAnswer() {
-        function alertUser() {
-            alert('You have not answered any question!');
+    // DialogBox function
+    function handleDialog(choose) {
+        function enable() {
+            window.onscroll = function () { };
         }
+
+        if (choose) {
+            setShowAnswers(true)
+            setConfirm(false)
+            enable()
+        } else {
+            setShowAnswers(false)
+            setConfirm(false)
+            enable()
+        }
+    }
+
+    // Check results
+    let clickCount = 0;
+    function checkAnswer() {
 
         const values = quiz.map(prev => {
             return prev.answers.map(opt => opt.isHeld)
@@ -174,15 +191,23 @@ export default function App() {
 
         const held = checkOut.every(Boolean)
 
-        if (held === true && clickCount > 0) {
-            setShowAnswers(true)
-        } else if (held === true && clickCount === 0) {
-            alertUser()
-            clickCount++
+        function disable() {
+            // To get the scroll position of current webpage
+            const TopScroll = window.pageYOffset
+            const LeftScroll = window.pageXOffset
+
+            // if scroll happens, set it to the previous value
+            window.onscroll = function () {
+                window.scrollTo(LeftScroll, TopScroll);
+            }
+        }
+
+        if (held === true) {
+            setConfirm(true)
+            disable()
         } else {
             setShowAnswers(true)
         }
-
     }
 
     // playAgain function
@@ -195,7 +220,7 @@ export default function App() {
     // Logic for rendering the submit/reset buttons
     const buttonElement = showAnswers ?
         <div className="btn-container">
-            <span>You scored {score}/{formData.number} correct answers or {percentage}%</span>
+            <span className="result">You scored {score}/{formData.number} correct answers or {percentage}%</span>
             <button className={`main-btn btn ${mode}`} onClick={resetQuiz}>Play Again</button>
         </div>
         :
@@ -217,9 +242,16 @@ export default function App() {
                 <option value="">-Choose-</option>
                 <option value="Any Category">Any Category</option>
                 <option value="9">General Knowledge</option>
-                <option value="23">History</option>
+                <option value="11">Film</option>
+                <option value="12">Music</option>
+                <option value="14">Television</option>
                 <option value="21">Sports</option>
+                <option value="22">Geography</option>
+                <option value="17">Science & Nature</option>
+                <option value="27">Animals</option>
+                <option value="23">History</option>
                 <option value="24">Politics</option>
+                <option value="28">Vehicles</option>
             </select>
             <label htmlFor="number">Questions</label>
             <select
@@ -338,6 +370,27 @@ export default function App() {
         localStorage.setItem("mode", theme)
     }
 
+    // Display dialog component
+    const dialogBox =
+        <div className="dialog-container">
+            <div className={`Dialog custom ${mode}`}>
+                <h2 style={{ color: "red" }}>You answered no questions!</h2>
+                <p>Do you wish to proceed?</p>
+                <div className="btn-container">
+                    <button className={`main-btn btn ${mode}`}
+                        onClick={() => handleDialog(false)}
+                    >
+                        Cancel
+                    </button>
+                    <button className={`main-btn btn ${mode}`}
+                        onClick={() => handleDialog(true)}
+                    >
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+
     // Logic for switching body color during mode change
     if (mode) {
         document.body.style.backgroundColor = "black";
@@ -356,13 +409,19 @@ export default function App() {
                     {perfect &&
                         <div className="congrats container">
                             <h1 className="perfect">CONGRATULATIONS!</h1>
-                            <h3 >You had perfect score!</h3>
+                            <h3>You had perfect score!</h3>
                         </div>
                     }
                     {perfect && <Confetti height={window.outerHeight} />}
                     {customDisplay}
                     {questions}
-                    {!show() ? <div className={`placeholder ${mode}`}><h2>Please<br />choose your quiz<br />type</h2></div> : buttonElement}
+                    {!show() ?
+                        <div className={`placeholder ${mode}`}>
+                            <h2>Please<br />choose your quiz<br />type</h2>
+                        </div>
+                        : buttonElement
+                    }
+                    {confirm && dialogBox}
                 </>
             }
             <img src="../images/blob-yellow.png" className="yellow" alt="blob.png" />

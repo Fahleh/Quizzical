@@ -4,6 +4,7 @@ import he from "he"
 export default function Question(props) {
 
     let mode = props.mode ? "darkmode" : "";
+    console.log(props.mode)
 
     const answerElements = props.answers.map(opt => {
 

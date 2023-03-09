@@ -26,6 +26,7 @@ main {
     max-width: 700px;
     height: auto;
     margin: auto;
+    position: relative;
 }
 
 .main-container {
@@ -33,16 +34,6 @@ main {
     max-width: 700px;
     height: 100vh;
     margin: auto;
-}
-
-@media only screen and (max-width: 640px) {
-    main {
-        width: 100%;
-    }
-
-    .container {
-        width: 100%;
-    }
 }
 
 .home-title {
@@ -112,16 +103,12 @@ main {
     border: 1px solid #4D5B9E;
     border-radius: 10px;
     color: #293264;
-    background-color: #ddaf07;
     cursor: pointer;
 }
-
-
 
 .options {
     padding: 3px 7px;
     margin: 2px 2px;
-
 }
 
 .btn-container {
@@ -196,10 +183,26 @@ select {
     margin-bottom: 0;
 }
 
+.dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    padding: 30px;
+    color: #42509d;
+    background-color: rgba(245, 247, 251, 1);
+    border: 0.1px solid #1338ed;
+    border-radius: 20px;
+}
+
 .dark {
     background-color: black;
     color: #F5F7FB;
-
 }
 
 .options,
@@ -214,7 +217,8 @@ select {
     font-size: 14px;
 }
 
-@media screen and (max-width: 480px) {
+
+@media screen and (max-width: 320px) {
     .placeholder {
         width: 100%;
         height: auto;
@@ -239,8 +243,25 @@ select {
         z-index: -1;
     }
 
-    .btn-container span {
-        color: #1338ed;
+    .result {
+        text-align: center;
         margin: 10px;
+        padding-left: 30px;
+    }
+
+    .result {
+        color: #1338ed;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .dialog {
+        width: 70%;
+    }
+
+    .result {
+        text-align: center;
+        margin: 10px;
+        padding-left: 10px;
     }
 }
