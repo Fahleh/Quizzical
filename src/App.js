@@ -253,17 +253,6 @@ export default function App() {
                 <option value="24">Politics</option>
                 <option value="28">Vehicles</option>
             </select>
-            <label htmlFor="number">Questions</label>
-            <select
-                id="number"
-                name="number"
-                value={formData.number}
-                onChange={handleChange}
-            >
-                <option value="">-Choose-</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-            </select>
             <label htmlFor="difficulty">Difficulty</label>
             <select
                 id="difficulty"
@@ -275,6 +264,17 @@ export default function App() {
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
+            </select>
+            <label htmlFor="number">Questions</label>
+            <select
+                id="number"
+                name="number"
+                value={formData.number}
+                onChange={handleChange}
+            >
+                <option value="">-Choose-</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
             </select>
             {/* <input
                 type="radio"
@@ -310,7 +310,7 @@ export default function App() {
                 />
             </div>
             <div >
-                <img src={mode ? "sun-icon.png" : "moon.png"} alt="icon.png"
+                <img src={mode ? "sun.png" : "moon.png"} alt="icon.png"
                     className={`mode-btn ${mode}`}
                     onClick={changeMode}
                 />
