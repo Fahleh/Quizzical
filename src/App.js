@@ -178,7 +178,6 @@ export default function App() {
     }
 
     // Check results
-    let clickCount = 0;
     function checkAnswer() {
 
         const values = quiz.map(prev => {
