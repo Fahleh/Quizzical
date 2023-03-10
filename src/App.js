@@ -220,7 +220,7 @@ export default function App() {
     // Logic for rendering the submit/reset buttons
     const buttonElement = showAnswers ?
         <div className="btn-container">
-            <span className="result">You scored {score}/{formData.number} correct answers or {percentage}%</span>
+            <span className="result">You got {score} out of {formData.number} answers correctly ({percentage}%)</span>
             <button className={`main-btn btn ${mode}`} onClick={resetQuiz}>Play Again</button>
         </div>
         :
@@ -407,7 +407,7 @@ export default function App() {
                 :
                 <>
                     {perfect &&
-                        <div className="congrats container">
+                        <div className={`congrats container ${mode}`}>
                             <h1 className="perfect">CONGRATULATIONS!</h1>
                             <h3>You had perfect score!</h3>
                         </div>
