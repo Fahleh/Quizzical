@@ -3,7 +3,7 @@ import he from "he"
 
 export default function Question(props) {
 
-    let mode = props.mode ? "darkmode" : "";
+    let mode = props.mode ? "dark" : "";
 
     const answerElements = props.answers.map(opt => {
 

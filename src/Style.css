@@ -83,7 +83,6 @@ main {
 
 .btn:hover,
 .power-btn:hover,
-.mode-btn:hover,
 .home-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -192,7 +191,7 @@ select {
 
 .congrats.dark {
     color: orange;
-    background-color: rgba(245, 247, 251, 0.2);
+    background-color: rgba(245, 247, 251, 0.9);
     border: none;
 }
 
@@ -226,12 +225,12 @@ select {
     border: 1px solid #F5F7FB;
 }
 
-.darkmode {
+/* .darkmode {
     background-color: black;
     color: #F5F7FB;
     font-weight: 100;
     font-size: 14px;
-}
+} */
 
 
 @media screen and (max-width: 320px) {
@@ -250,6 +249,14 @@ select {
         right: -210px;
         top: -145px;
         z-index: -1;
+    }
+
+    .perfect {
+        font-size: 30px;
+    }
+
+    .perfect1 {
+        font-size: 20px;
     }
 
     .blue {
@@ -289,7 +296,7 @@ select {
         width: 65%;
     }
 
-    .options {}
+    .perfect {}
 
     .yellow {
         position: fixed;

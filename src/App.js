@@ -407,8 +407,8 @@ export default function App() {
                 <>
                     {perfect &&
                         <div className={`congrats container ${mode}`}>
-                            <h1 className="perfect">CONGRATULATIONS!</h1>
-                            <h3>You had perfect score!</h3>
+                            <h2 className="perfect">CONGRATULATIONS!</h2>
+                            <h3 className="perfect1">You had perfect score!</h3>
                         </div>
                     }
                     {perfect && <Confetti height={window.outerHeight} />}
