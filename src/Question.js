@@ -66,7 +66,7 @@ export default function Question(props) {
             <button key={opt.id}
                 onClick={() => props.selected(opt.id, props.id)}
                 className={`options btn ${mode}`}
-                disabled={props.showAnswer ? true : false}
+                disabled={props.showAnswer || props.dialog ? true : false}
                 style={styles}
             >
                 {he.decode(opt.value)}

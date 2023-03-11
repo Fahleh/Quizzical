@@ -82,6 +82,8 @@ export default function App() {
                     return { ...details, id: nanoid(), answers: options }
                 })
             }))
+            .catch(error => console.log(error))
+            .catch(error => console.log(error))
     }, [reset, formData.number, formData.difficulty, formData.category])
 
 
@@ -144,7 +146,8 @@ export default function App() {
             }
         })
         setShowAnswers(false)
-        localStorage.clear()
+        setConfirm(false)
+        localStorage.removeItem("Restart")
     }
 
     // Customize questions
@@ -345,6 +348,7 @@ export default function App() {
                 showAnswer={showAnswers}
                 correct={question.correct_answer}
                 mode={mode}
+                dialog={confirm}
             />
         )
     })
@@ -371,10 +375,10 @@ export default function App() {
 
     // Display dialog component
     const dialogBox =
-        <div className="dialog-container">
-            <div className={`Dialog custom ${mode}`}>
+        <div className={`dialog-container ${mode}`}>
+            <div className="dialog custom">
                 <h2 style={{ color: "red" }}>You answered no questions!</h2>
-                <p>Do you wish to proceed?</p>
+                <span>Do you wish to proceed?</span>
                 <div className="btn-container">
                     <button className={`main-btn btn ${mode}`}
                         onClick={() => handleDialog(false)}
@@ -410,6 +414,7 @@ export default function App() {
                             <h2 className="perfect">CONGRATULATIONS!</h2>
                             <h3 className="perfect1">You had perfect score!</h3>
                         </div>
+
                     }
                     {perfect && <Confetti height={window.outerHeight} />}
                     {customDisplay}

@@ -26,7 +26,7 @@ main {
     justify-content: center;
     width: 100%;
     max-width: 700px;
-    height: auto;
+    height: 100vh;
     margin: auto;
     position: relative;
 }
@@ -34,7 +34,7 @@ main {
 .main-container {
     width: 70%;
     max-width: 700px;
-    height: 100vh;
+    height: 100%;
     margin: auto;
 }
 
@@ -176,7 +176,7 @@ select {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(245, 247, 251, 0.4);
+    background-color: rgba(245, 247, 251, 0.8);
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 25px;
     letter-spacing: -1px;
@@ -195,24 +195,31 @@ select {
     border: none;
 }
 
+.dialog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 20%;
+    position: fixed;
+    top: 30%;
+    background-color: #F5F7FB;
+    border: 0.1px solid #1338ed;
+    border-radius: 20px;
+}
+
 .dialog {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    width: 50%;
-    padding: 30px;
-    color: #42509d;
-    background-color: rgba(245, 247, 251, 1);
-    border: 0.1px solid #1338ed;
-    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
 
+.dialog span {
+    margin-bottom: 15px;
 }
 
 .dark {
@@ -225,15 +232,11 @@ select {
     border: 1px solid #F5F7FB;
 }
 
-/* .darkmode {
-    background-color: black;
-    color: #F5F7FB;
-    font-weight: 100;
-    font-size: 14px;
-} */
-
-
 @media screen and (max-width: 320px) {
+    body {
+        font-size: 10px;
+    }
+
     .placeholder {
         width: 100%;
         height: auto;
@@ -249,6 +252,11 @@ select {
         right: -210px;
         top: -145px;
         z-index: -1;
+    }
+
+    .dialog-container {
+        width: 70%;
+        height: 30%;
     }
 
     .perfect {
@@ -277,7 +285,7 @@ select {
     }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (min-width: 321px) and (max-width: 480px) {
     body {
         font-size: 10px;
     }
@@ -296,8 +304,6 @@ select {
         width: 65%;
     }
 
-    .perfect {}
-
     .yellow {
         position: fixed;
         right: -210px;
@@ -312,8 +318,10 @@ select {
         z-index: -1;
     }
 
-    .dialog {
+
+    .dialog-container {
         width: 70%;
+        height: 25%;
     }
 
     .result {
@@ -325,7 +333,7 @@ select {
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
     body {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .placeholder {
@@ -356,8 +364,151 @@ select {
         z-index: -1;
     }
 
-    .dialog {
-        width: 70%;
+    .dialog-container {
+        width: 45%;
+        height: 25%;
+        min-height: 170px;
+    }
+
+    .result {
+        text-align: center;
+        margin: 10px;
+        padding-left: 10px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 12px;
+    }
+
+    .placeholder {
+        width: 80%;
+        height: auto;
+        font-size: 40px;
+        position: fixed;
+        top: 30%;
+        left: 10%;
+        border: none;
+    }
+
+    .custom {
+        width: 65%;
+    }
+
+    .yellow {
+        position: fixed;
+        right: -210px;
+        top: -145px;
+        z-index: -1;
+    }
+
+    .blue {
+        position: fixed;
+        left: -230px;
+        bottom: -178px;
+        z-index: -1;
+    }
+
+    .dialog-container {
+        width: 45%;
+        max-width: 350px;
+        height: 25%;
+        min-height: 170px;
+    }
+
+    .result {
+        text-align: center;
+        margin: 10px;
+        padding-left: 10px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    body {
+        font-size: 12px;
+    }
+
+    .placeholder {
+        width: 80%;
+        height: auto;
+        font-size: 40px;
+        position: fixed;
+        top: 30%;
+        left: 10%;
+        border: none;
+    }
+
+    .custom {
+        width: 65%;
+    }
+
+    .yellow {
+        position: fixed;
+        right: -210px;
+        top: -145px;
+        z-index: -1;
+    }
+
+    .blue {
+        position: fixed;
+        left: -230px;
+        bottom: -178px;
+        z-index: -1;
+    }
+
+    .dialog-container {
+        width: 45%;
+        max-width: 380px;
+        height: 25%;
+
+    }
+
+    .result {
+        text-align: center;
+        margin: 10px;
+        padding-left: 10px;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    body {
+        font-size: 12px;
+    }
+
+    .placeholder {
+        width: 80%;
+        height: auto;
+        font-size: 40px;
+        position: fixed;
+        top: 30%;
+        left: 10%;
+        border: none;
+    }
+
+    .custom {
+        width: 65%;
+    }
+
+    .yellow {
+        position: fixed;
+        right: -210px;
+        top: -145px;
+        z-index: -1;
+    }
+
+    .blue {
+        position: fixed;
+        left: -230px;
+        bottom: -178px;
+        z-index: -1;
+    }
+
+    .dialog-container {
+        width: 45%;
+        max-width: 400px;
+        height: 25%;
+
     }
 
     .result {
