@@ -38,7 +38,7 @@ export default function App() {
 
     localStorage.setItem("data", JSON.stringify(formData))
 
-    React.useEffect(() => {
+    useEffect(() => {
 
         let apiUrl;
 
@@ -83,10 +83,7 @@ export default function App() {
                 })
             }))
             .catch(error => console.log(error))
-            .catch(error => console.log(error))
     }, [reset, formData.number, formData.difficulty, formData.category])
-
-
 
     // Function to mix correct/incorrect functions
     function shuffle(array) {
@@ -121,7 +118,6 @@ export default function App() {
 
     let percentage = (score / formData.number) * 100;
 
-
     // Confetti display Logic
     let perfect = false;
     if (showAnswers) {
@@ -153,6 +149,8 @@ export default function App() {
     // Customize questions
     function handleChange(event) {
         const { name, value } = event.target
+
+        console.log(name.value)
         setFormData(prevData => {
             return {
                 ...prevData,
@@ -403,6 +401,18 @@ export default function App() {
         document.body.style.color = "#293264";
     }
 
+    let styles;
+    if (mode) {
+        styles = {
+            backgroundColor: "black"
+        }
+    } else {
+        styles = {
+            backgroundColor: "#F5F7FB"
+        }
+    }
+
+
     return (
         <main >
             {start ?
@@ -410,7 +420,7 @@ export default function App() {
                 :
                 <>
                     {perfect &&
-                        <div className={`congrats container ${mode}`}>
+                        <div className={`congrats container ${mode}`} id="holder">
                             <h2 className="perfect">CONGRATULATIONS!</h2>
                             <h3 className="perfect1">You had perfect score!</h3>
                         </div>
@@ -420,7 +430,9 @@ export default function App() {
                     {customDisplay}
                     {questions}
                     {!show() ?
-                        <div className={`placeholder ${mode}`}>
+                        <div className={`placeholder ${mode}`}
+                            style={styles}
+                        >
                             <h2>Please<br />choose your quiz<br />type</h2>
                         </div>
                         : buttonElement
@@ -430,6 +442,6 @@ export default function App() {
             }
             <img src="../images/blob-yellow.png" className="yellow" alt="blob.png" />
             <img src="../images/blob-blue.png" className="blue" alt="blob.png" />
-        </main>
+        </main >
     )
 }
