@@ -34,12 +34,13 @@ export default function App() {
     const [formData, setFormData] = React.useState(details)
     const [mode, setMode] = useState(theme)
     const [confirm, setConfirm] = useState(false)
+    const [loading, setIsLoading] = useState(false)
 
 
     localStorage.setItem("data", JSON.stringify(formData))
 
     useEffect(() => {
-
+        setIsLoading(true)
         let apiUrl;
 
         if (formData.category === 'Any Category') {
@@ -83,6 +84,7 @@ export default function App() {
                 })
             }))
             .catch(error => console.log(error))
+            .finally(() => setIsLoading(false))
     }, [reset, formData.number, formData.difficulty, formData.category])
 
     // Function to mix correct/incorrect functions
@@ -149,8 +151,6 @@ export default function App() {
     // Customize questions
     function handleChange(event) {
         const { name, value } = event.target
-
-        console.log(name.value)
         setFormData(prevData => {
             return {
                 ...prevData,
@@ -360,6 +360,7 @@ export default function App() {
         return res
     }
 
+
     // Function for mode change
     function changeMode() {
         if (theme === "" || theme === null) {
@@ -412,7 +413,6 @@ export default function App() {
         }
     }
 
-
     return (
         <main >
             {start ?
@@ -428,14 +428,21 @@ export default function App() {
                     }
                     {perfect && <Confetti height={window.outerHeight} />}
                     {customDisplay}
-                    {questions}
-                    {!show() ?
+                    {loading ?
+                        <div className={`placeholder ${mode}`}>
+                            <h3>Loading...</h3>
+                        </div>
+                        :
+                        questions
+                    }
+                    {show() ?
+                        buttonElement
+                        :
                         <div className={`placeholder ${mode}`}
                             style={styles}
                         >
                             <h2>Please<br />choose your quiz<br />type</h2>
                         </div>
-                        : buttonElement
                     }
                     {confirm && dialogBox}
                 </>
