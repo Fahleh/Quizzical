@@ -1,527 +1,516 @@
 * {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    color: #293264;
-    font-family: 'Karla', sans-serif;
-    background-color: #F5F7FB;
+  margin: 0;
+  color: #293264;
+  font-family: "Karla", sans-serif;
+  background-color: #f5f7fb;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  position: relative;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 700px;
-    height: 100vh;
-    margin: auto;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  height: 100vh;
+  margin: auto;
+  position: relative;
 }
 
 .main-container {
-    width: 70%;
-    max-width: 700px;
-    height: 100%;
-    margin: auto;
-    margin-top: 5px;
+  width: 70%;
+  max-width: 700px;
+  height: 100%;
+  margin: auto;
+  margin-top: 5px;
 }
 
 .home-title {
-    margin-bottom: 0;
-    font-weight: 700;
-    font-size: 31px;
-    line-height: 37px;
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 37px;
 }
 
 .home-desc {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 .home-btn {
-    font-family: 'Inter', sans-serif;
-    margin-top: 10px;
-    width: 190px;
-    height: 52px;
-    background: #4D5B9E;
-    border-radius: 15px;
-    color: #F5F7FB;
-    cursor: pointer;
+  font-family: "Inter", sans-serif;
+  margin-top: 10px;
+  width: 190px;
+  height: 52px;
+  background: #4d5b9e;
+  border-radius: 15px;
+  color: #f5f7fb;
+  cursor: pointer;
 }
 
 .custom {
-    text-align: center;
-    width: 80%;
+  text-align: center;
+  width: 80%;
 }
 
 .power-btn {
-    background-color: #4D5B9E;
-    width: 30px;
-    border-radius: 40%;
-    margin-left: 10px;
-    padding: 8px;
-    position: fixed;
-    top: 5px;
-    left: 5px;
-    cursor: pointer;
+  background-color: #4d5b9e;
+  width: 30px;
+  border-radius: 40%;
+  margin-left: 10px;
+  padding: 8px;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
 }
-
 
 .btn:hover,
 .power-btn:hover,
+.mode-btn:hover,
 .home-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+  background-color: #2d47c6;
 }
 
 .mode-btn {
-    background-color: #4D5B9E;
-    width: 35px;
-    border-radius: 40%;
-    margin-left: 10px;
-    padding: 8px;
-    position: fixed;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
+  background-color: #4d5b9e;
+  width: 35px;
+  border-radius: 40%;
+  margin-left: 10px;
+  padding: 8px;
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
 }
 
 .btn {
-    border-radius: 6px;
-    border: 1px solid #4D5B9E;
-    border-radius: 10px;
-    color: #293264;
-    cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #4d5b9e;
+  border-radius: 10px;
+  color: #293264;
+  cursor: pointer;
 }
 
 .options {
-    padding: 3px 7px;
-    margin: 2px 2px;
+  padding: 3px 7px;
+  margin: 2px 2px;
 }
 
 .btn-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }
 
 .main-btn {
-    padding: 10px 15px;
-    margin: 5px;
-    background-color: #4D5B9E;
-    color: #F5F7FB;
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #4d5b9e;
+  color: #f5f7fb;
 }
 
 .placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    font-family: 'Amatic SC', sans-serif;
-    font-size: 80px;
-    text-align: center;
-    color: #42509d;
-    border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  font-family: "Amatic SC", sans-serif;
+  font-size: 80px;
+  text-align: center;
+  color: #42509d;
+  border: none;
 }
 
 .yellow {
-    position: fixed;
-    right: -120px;
-    top: -135px;
-    z-index: -1;
+  position: fixed;
+  right: -120px;
+  top: -135px;
+  z-index: -1;
 }
 
 .blue {
-    position: fixed;
-    left: -135px;
-    bottom: -138px;
-    z-index: -1;
+  position: fixed;
+  left: -135px;
+  bottom: -138px;
+  z-index: -1;
 }
 
 select {
-    margin: 10px 5px;
-    width: 55px;
-    cursor: pointer;
+  margin: 10px 5px;
+  width: 55px;
+  cursor: pointer;
 }
 
 #category,
 #difficulty,
 #number {
-    width: 50px;
-    margin-right: 1rem;
+  width: 50px;
+  margin-right: 1rem;
 }
 
 .congrats {
-    position: absolute;
-    width: 100%;
-    max-width: 700px;
-    height: 50%;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(245, 247, 251, 0.8);
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: 25px;
-    letter-spacing: -1px;
-    position: fixed;
+  position: absolute;
+  width: 100%;
+  max-width: 700px;
+  height: 50%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(245, 247, 251, 0.8);
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 25px;
+  letter-spacing: -1px;
+  position: fixed;
 }
 
-
-
 .perfect {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .congrats.dark {
-    color: orange;
-    background-color: rgba(245, 247, 251, 0.9);
-    border: none;
+  color: orange;
+  background-color: rgba(245, 247, 251, 0.9);
+  border: none;
 }
 
 .dialog-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25%;
-    height: 20%;
-    position: fixed;
-    top: 30%;
-    background-color: #F5F7FB;
-    border: 0.1px solid #1338ed;
-    border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 20%;
+  position: fixed;
+  top: 30%;
+  background-color: #f5f7fb;
+  border: 0.1px solid #1338ed;
+  border-radius: 20px;
 }
 
 .dialog {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    width: 100%;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .dialog span {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .dark {
-    background-color: black;
-    color: #F5F7FB;
+  background-color: black;
+  color: #f5f7fb;
 }
 
 .options,
 .dark {
-    border: 1px solid #F5F7FB;
+  border: 1px solid #f5f7fb;
 }
 
 @media screen and (max-width: 320px) {
-    body {
-        font-size: 10px;
-    }
+  body {
+    font-size: 10px;
+  }
 
-    .placeholder {
-        width: 100%;
-        height: 90dvh;
-        font-size: 40px;
-        position: fixed;
-        top: 20%;
-        border: none;
-    }
+  .placeholder {
+    width: 100%;
+    height: 90dvh;
+    font-size: 40px;
+    position: fixed;
+    top: 20%;
+    border: none;
+  }
 
-    .custom {
-        width: 75%;
-    }
+  .custom {
+    width: 75%;
+  }
 
-    .dialog-container {
-        width: 70%;
-        height: 30%;
-    }
+  .dialog-container {
+    width: 70%;
+    height: 30%;
+  }
 
-    .perfect {
-        font-size: 30px;
-    }
+  .perfect {
+    font-size: 30px;
+  }
 
-    .perfect1 {
-        font-size: 20px;
-    }
+  .perfect1 {
+    font-size: 20px;
+  }
 
-    .yellow {
-        position: fixed;
-        right: -210px;
-        top: -145px;
-        z-index: -1;
-    }
+  .yellow {
+    position: fixed;
+    right: -210px;
+    top: -145px;
+    z-index: -1;
+  }
 
-    .blue {
-        position: fixed;
-        left: -230px;
-        bottom: -178px;
-        z-index: 1;
-    }
+  .blue {
+    position: fixed;
+    left: -230px;
+    bottom: -178px;
+    z-index: 1;
+  }
 
-    .result {
-        text-align: center;
-        margin: 10px;
-        padding-left: 30px;
-    }
+  .result {
+    text-align: center;
+    margin: 10px;
+    padding-left: 30px;
+  }
 
-    .result {
-        color: #1338ed;
-    }
+  .result {
+    color: #1338ed;
+  }
 }
 
 @media only screen and (min-width: 321px) and (max-width: 480px) {
-    body {
-        font-size: 10px;
-    }
+  body {
+    font-size: 10px;
+  }
 
-    .placeholder {
-        /* width: 80%;
-        height: auto;
-        font-size: 40px;
-        position: fixed;
-        top: 30%;
-        left: 10%;
-        border: none; */
-        width: 100%;
-        height: 90dvh;
-        font-size: 40px;
-        position: fixed;
-        top: 13%;
-        border: none;
-    }
+  .placeholder {
+    width: 100%;
+    height: 90dvh;
+    font-size: 40px;
+    position: fixed;
+    top: 13%;
+    border: none;
+  }
 
-    .custom {
-        width: 65%;
-    }
+  .custom {
+    width: 65%;
+  }
 
-    .custom hr {
-        margin-top: 0;
-    }
+  .custom hr {
+    margin-top: 0;
+  }
 
-    .yellow {
-        position: fixed;
-        right: -210px;
-        top: -145px;
-        z-index: -1;
-    }
+  .yellow {
+    position: fixed;
+    right: -210px;
+    top: -145px;
+    z-index: -1;
+  }
 
-    .blue {
-        position: fixed;
-        left: -230px;
-        bottom: -178px;
-        z-index: 1;
-    }
+  .blue {
+    position: fixed;
+    left: -230px;
+    bottom: -178px;
+    z-index: 1;
+  }
 
-    .dialog-container {
-        width: 70%;
-        height: 25%;
-    }
+  .dialog-container {
+    width: 70%;
+    height: 25%;
+  }
 
-    .result {
-        text-align: center;
-        margin: 10px;
-        padding-left: 10px;
-    }
+  .result {
+    text-align: center;
+    margin: 10px;
+    padding-left: 10px;
+  }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    body {
-        font-size: 12px;
-    }
+  body {
+    font-size: 12px;
+  }
 
-    .placeholder {
-        width: 100%;
-        height: 95dvh;
-        font-size: 40px;
-        position: fixed;
-        top: 7%;
-        border: none;
-    }
+  .placeholder {
+    width: 100%;
+    height: 95dvh;
+    font-size: 40px;
+    position: fixed;
+    top: 7%;
+    border: none;
+  }
 
-    .custom {
-        width: 65%;
-    }
+  .custom {
+    width: 65%;
+  }
 
-    .yellow {
-        position: fixed;
-        right: -210px;
-        top: -145px;
-        z-index: -1;
-    }
+  .yellow {
+    position: fixed;
+    right: -210px;
+    top: -145px;
+    z-index: -1;
+  }
 
-    .blue {
-        position: fixed;
-        left: -230px;
-        bottom: -178px;
-        z-index: 1;
-    }
+  .blue {
+    position: fixed;
+    left: -230px;
+    bottom: -178px;
+    z-index: 1;
+  }
 
-    .dialog-container {
-        width: 45%;
-        height: 25%;
-        min-height: 170px;
-    }
+  .dialog-container {
+    width: 45%;
+    height: 25%;
+    min-height: 170px;
+  }
 
-    .result {
-        text-align: center;
-        margin: 10px;
-        padding-left: 10px;
-    }
+  .result {
+    text-align: center;
+    margin: 10px;
+    padding-left: 10px;
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    body {
-        font-size: 12px;
-    }
+  body {
+    font-size: 12px;
+  }
 
-    .placeholder {
-        width: 100%;
-        height: 95dvh;
-        font-size: 40px;
-        position: fixed;
-        top: 6%;
-        border: none;
-    }
+  .placeholder {
+    width: 100%;
+    height: 95dvh;
+    font-size: 40px;
+    position: fixed;
+    top: 6%;
+    border: none;
+  }
 
-    .custom {
-        width: 65%;
-    }
+  .custom {
+    width: 65%;
+  }
 
-    .yellow {
-        position: fixed;
-        right: -210px;
-        top: -145px;
-        z-index: -1;
-    }
+  .yellow {
+    position: fixed;
+    right: -210px;
+    top: -145px;
+    z-index: -1;
+  }
 
-    .blue {
-        position: fixed;
-        left: -230px;
-        bottom: -178px;
-        z-index: 1;
-    }
+  .blue {
+    position: fixed;
+    left: -230px;
+    bottom: -178px;
+    z-index: 1;
+  }
 
-    .dialog-container {
-        width: 45%;
-        max-width: 350px;
-        height: 25%;
-        min-height: 170px;
-    }
+  .dialog-container {
+    width: 45%;
+    max-width: 350px;
+    height: 25%;
+    min-height: 170px;
+  }
 
-    .result {
-        text-align: center;
-        margin: 10px;
-        padding-left: 10px;
-    }
+  .result {
+    text-align: center;
+    margin: 10px;
+    padding-left: 10px;
+  }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
-    body {
-        font-size: 12px;
-    }
+  body {
+    font-size: 12px;
+  }
 
-    .placeholder {
-        width: 100%;
-        height: 95vh;
-        font-size: 40px;
-        position: fixed;
-        top: 8%;
-        border: none;
-    }
+  .placeholder {
+    width: 100%;
+    height: 95vh;
+    font-size: 40px;
+    position: fixed;
+    top: 8%;
+    border: none;
+  }
 
-    .custom {
-        width: 65%;
-    }
+  .custom {
+    width: 65%;
+  }
 
-    .yellow {
-        position: fixed;
-        right: -210px;
-        top: -145px;
-        z-index: -1;
-    }
+  .yellow {
+    position: fixed;
+    right: -210px;
+    top: -145px;
+    z-index: -1;
+  }
 
-    .blue {
-        position: fixed;
-        left: -230px;
-        bottom: -178px;
-        z-index: 1;
-    }
+  .blue {
+    position: fixed;
+    left: -230px;
+    bottom: -178px;
+    z-index: 1;
+  }
 
-    .dialog-container {
-        width: 45%;
-        max-width: 380px;
-        height: 25%;
+  .dialog-container {
+    width: 45%;
+    max-width: 380px;
+    height: 25%;
+  }
 
-    }
-
-    .result {
-        text-align: center;
-        margin: 10px;
-        padding-left: 10px;
-    }
+  .result {
+    text-align: center;
+    margin: 10px;
+    padding-left: 10px;
+  }
 }
 
 @media screen and (min-width: 1201px) {
-    body {
-        font-size: 12px;
-    }
+  body {
+    font-size: 12px;
+  }
 
-    .placeholder {
-        width: 100%;
-        height: 95dvh;
-        font-size: 40px;
-        position: fixed;
-        top: 6%;
-        border: none;
-    }
+  .placeholder {
+    width: 100%;
+    height: 95dvh;
+    font-size: 40px;
+    position: fixed;
+    top: 6%;
+    border: none;
+  }
 
-    .custom {
-        width: 65%;
-    }
+  .custom {
+    width: 65%;
+  }
 
-    .yellow {
-        position: fixed;
-        right: -210px;
-        top: -145px;
-        z-index: -1;
-    }
+  .yellow {
+    position: fixed;
+    right: -210px;
+    top: -145px;
+    z-index: -1;
+  }
 
-    .blue {
-        position: fixed;
-        left: -230px;
-        bottom: -178px;
-        z-index: 1;
-    }
+  .blue {
+    position: fixed;
+    left: -230px;
+    bottom: -178px;
+    z-index: 1;
+  }
 
-    .dialog-container {
-        width: 45%;
-        max-width: 400px;
-        height: 25%;
+  .dialog-container {
+    width: 45%;
+    max-width: 400px;
+    height: 25%;
+  }
 
-    }
-
-    .result {
-        text-align: center;
-        margin: 10px;
-        padding-left: 10px;
-    }
+  .result {
+    text-align: center;
+    margin: 10px;
+    padding-left: 10px;
+  }
 }
