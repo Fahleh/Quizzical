@@ -33,7 +33,7 @@ export default function App() {
   const [formData, setFormData] = React.useState(details);
   const [mode, setMode] = useState(theme);
   const [confirm, setConfirm] = useState(false);
-  const [loading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   localStorage.setItem("data", JSON.stringify(formData));
 
@@ -409,14 +409,16 @@ export default function App() {
           )}
           {perfect && <Confetti height={window.outerHeight} />}
           {customDisplay}
-          {loading ? (
-            <div className={`placeholder ${mode}`}>
+          {isLoading ? (
+            <div className={`loading ${mode}`}>
               <h3>Loading...</h3>
             </div>
           ) : (
             questions
           )}
-          {show() && !loading ? (
+          {isLoading ? (
+            ""
+          ) : show() ? (
             buttonElement
           ) : (
             <div className={`placeholder ${mode}`} style={styles}>

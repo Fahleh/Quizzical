@@ -139,6 +139,20 @@ main {
   border: none;
 }
 
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 85vh;
+  font-family: "Amatic SC", sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+  color: #42509d;
+  border: none;
+  z-index: 2;
+}
+
 .yellow {
   position: fixed;
   right: -120px;
