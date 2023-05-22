@@ -72,6 +72,7 @@ main {
 .power-btn {
   background-color: #4d5b9e;
   width: 30px;
+  border: 1px solid #f5f7fb;
   border-radius: 40%;
   margin-left: 10px;
   padding: 8px;
@@ -91,6 +92,7 @@ main {
 .mode-btn {
   background-color: #4d5b9e;
   width: 35px;
+  border: 1px solid #f5f7fb;
   border-radius: 40%;
   margin-left: 10px;
   padding: 8px;
@@ -102,7 +104,7 @@ main {
 
 .btn {
   border-radius: 6px;
-  border: 1px solid #4d5b9e;
+  border: 1px solid #f5f7fb;
   border-radius: 10px;
   color: #293264;
   cursor: pointer;
@@ -111,6 +113,7 @@ main {
 .options {
   padding: 3px 7px;
   margin: 2px 2px;
+  border: 1px solid #f5f7fb;
 }
 
 .btn-container {
@@ -237,11 +240,6 @@ select {
 .dark {
   background-color: black;
   color: #f5f7fb;
-}
-
-.options,
-.dark {
-  border: 1px solid #f5f7fb;
 }
 
 @media screen and (max-width: 320px) {
